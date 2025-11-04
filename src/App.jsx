@@ -1,12 +1,12 @@
 import {Route, Routes} from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
 
     return (<div className={'container-fluid'}>
-            {/*<Routes>*/}
-            {/*    <Route path="/" element={<LandingPage/>}/>*/}
-            {/*</Routes>*/}
-            hello
+            <Routes>
+                <Route path="/" element={<LandingPage/>}/>
+            </Routes>
         </div>
     )
         ;
