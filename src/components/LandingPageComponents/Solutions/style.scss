@@ -1,7 +1,8 @@
 /* Core styles */
 .SolutionsLandingPage {
     /* background: #ccc; */
-    padding-top: 2rem;
+    padding-top: 10em;
+    padding-bottom: 4rem;
     background: linear-gradient(to top right,
             rgb(212, 232, 255) 0%,
             rgb(216, 234, 255) 30%,
@@ -10,21 +11,18 @@
 }
 
 .fw-black {
-    font-weight: 900 !important;
+    font-weight: 900  !important;
 }
 
 /* Main text */
 .text-primary {
-    color: #0d0255 !important;
+    color: #5CA9FF !important;
 }
 
 .text-dark {
     color: #000 !important;
 }
 
-.fw-black {
-    font-weight: 900;
-}
 
 /* Solution Card  */
 
@@ -53,7 +51,7 @@
     top: 30px;
     left: 40px;
     overflow: visible;
-    transition: all 0.8s ease-in-out;
+    transition: all 0.2s ease-in-out;
     cursor: pointer;
 }
 
@@ -70,7 +68,7 @@
     left: 34px;
     font-family: 'Inter', sans-serif;
     font-size: 24px;
-    font-weight: 900;
+    font-weight: 800;
     text-align: right;
 }
 
@@ -81,6 +79,7 @@
     width: 229px;
     height: 186px;
     font-size: 14px;
+    font-weight: 450;
 }
 
 .card__item {
