@@ -7,8 +7,6 @@ import avatar5 from './images/avatar5.png'
 import avatar6 from './images/avatar6.png'
 
 
-
-
 function Solutions() {
     return <div className="SolutionsLandingPage">
 
@@ -30,7 +28,9 @@ function Solutions() {
         {/* /Main textsa */}
 
         {/* Solution cards */}
-        <div className="container py-5">
+        <div className="container py-5 solutions_card">
+            <div className="bgCircle"></div>
+
             <div className="card__items">
 
                 <div className="row">
@@ -38,7 +38,7 @@ function Solutions() {
                         {/* Card 1 */}
                         <div className="card__item card__item1">
                             <div className="card__image">
-                                <img src={avatar1} alt="1 avatar" className="solution-avatar img-fluid img-sm" />
+                                <img src={avatar1} alt="1 avatar" className="solution-avatar img-fluid img-sm"/>
                             </div>
                             <h3 className="card__title">
                                 Create Tasks Effortlessly
@@ -55,7 +55,7 @@ function Solutions() {
                         {/* Card 2 */}
                         <div className="card__item card__item2">
                             <div className="card__image">
-                                <img src={avatar2} alt="2 avatar" className="solution-avatar img-fluid img-sm" />                    </div>
+                                <img src={avatar2} alt="2 avatar" className="solution-avatar img-fluid img-sm"/></div>
                             <h3 className="card__title">
                                 View and Track Your Work
                             </h3>
@@ -74,7 +74,7 @@ function Solutions() {
                         {/* Card 3 */}
                         <div className="card__item card__item3">
                             <div className="card__image">
-                                <img src={avatar3} alt="3 avatar" className="solution-avatar img-fluid img-sm" />                    </div>
+                                <img src={avatar3} alt="3 avatar" className="solution-avatar img-fluid img-sm"/></div>
                             <h3 className="card__title">
                                 Edit and Improve Flexibly
                             </h3>
@@ -98,7 +98,7 @@ function Solutions() {
                         {/* Card 4 */}
                         <div className="card__item card__item4">
                             <div className="card__image">
-                                <img src={avatar4} alt="4 avatar" className="solution-avatar img-fluid img-sm" />                    </div>
+                                <img src={avatar4} alt="4 avatar" className="solution-avatar img-fluid img-sm"/></div>
                             <h3 className="card__title">
                                 Clean Up and Stay Focused
                             </h3>
@@ -117,7 +117,7 @@ function Solutions() {
                         {/* Card 5 */}
                         <div className="card__item card__item5">
                             <div className="card__image">
-                                <img src={avatar5} alt="5 avatar" className="solution-avatar img-fluid img-sm" />                    </div>
+                                <img src={avatar5} alt="5 avatar" className="solution-avatar img-fluid img-sm"/></div>
                             <h3 className="card__title">
                                 Smarter Task Control
                             </h3>
@@ -133,7 +133,7 @@ function Solutions() {
                         {/* Card 6 */}
                         <div className="card__item card__item6">
                             <div className="card__image">
-                                <img src={avatar6} alt="6 avatar" className="solution-avatar img-fluid img-sm" />                    </div>
+                                <img src={avatar6} alt="6 avatar" className="solution-avatar img-fluid img-sm"/></div>
                             <h3 className="card__title">
                                 Simple, Intuitive, Powerful
                             </h3>
@@ -148,8 +148,8 @@ function Solutions() {
             </div>
         </div>
 
-
         {/* /Solution cards */}
     </div>
 }
+
 export default Solutions;
