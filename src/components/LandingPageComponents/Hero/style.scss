@@ -1,3 +1,109 @@
 .HeroLandingPage{
+    background: linear-gradient(to bottom right,
+          rgb(212, 232, 255) 0%,
+          rgb(216, 234, 255) 30%,
+          rgb(175, 213, 255) 70%,
+          rgb(251, 253, 255) 100%);
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          
+}
 
+.navbar_header {
+    width: 870px;
+    background: linear-gradient(180deg, #FFFFFF 60%, #FFFFFF 20%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    border-radius: 20px;
+    position: fixed;
+    z-index: 10000;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    margin: 35px 20% 0;
+    .navbar{
+        display: flex;
+        gap: 0 25px;
+        .nav {
+            color: black;
+            font-size: 24px;
+        }
+    }
+    .Start {
+        height: 40px;
+        border-radius: 15px;
+        padding: 0 30px;
+        color: black;
+        background: rgba(255, 255, 255, 0.2); 
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 50px; 
+        backdrop-filter: blur(20px); 
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 24px;
+    }
+    .Start:hover {
+        background: rgba(255, 255, 255, 0.35);
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+    }
+
+}
+
+
+.Hero_start {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto 0;
+    padding: 0 200px;
+    text-align: center;
+    
+    .main_title {
+        font-size: 96px;
+    }
+    .stay_focused {
+        font-size: 20px;
+        color: rgba(0, 0, 0, 0.57);
+        width: 650px;
+    }
+    .Hero_button {
+        cursor: pointer;
+        padding: 24px 48px;
+        background-color: #FFFFFF;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        font-size: 24px;
+        margin-top: 40px;
+    }
+}
+.Hero_start::before, .Hero_start::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(5px);
+    }
+
+    .Hero_start::before {
+        top: 40%;
+        left: 14%;
+        width: 190px;
+        height: 190px;
+    }
+    .Hero_start::after {
+        top: 10%;
+        right: 10%;
+        width: 120px;
+        height: 120px;
+    }
+.Dashboard {
+    margin: 0 80px;
 }
