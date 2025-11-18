@@ -34,7 +34,7 @@ function Solutions() {
             <div className="card__items">
 
                 <div className="row">
-                    <div className="col-3">
+                    <div className="col-4">
                         {/* Card 1 */}
                         <div className="card__item card__item1">
                             <div className="card__image">
@@ -51,7 +51,7 @@ function Solutions() {
                         {/* /Card 1 */}
                     </div>
 
-                    <div className="col-3">
+                    <div className="col-4">
                         {/* Card 2 */}
                         <div className="card__item card__item2">
                             <div className="card__image">
@@ -70,7 +70,7 @@ function Solutions() {
                         {/* /Card 2 */}
                     </div>
 
-                    <div className="col-3">
+                    <div className="col-4">
                         {/* Card 3 */}
                         <div className="card__item card__item3">
                             <div className="card__image">
@@ -87,7 +87,6 @@ function Solutions() {
                                 keeping your workflow accurate and always up to date.
                             </p>
                         </div>
-                        {/* /Card3 */}
                     </div>
                 </div>
 

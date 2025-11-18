@@ -1,63 +1,84 @@
-.HeroLandingPage{
-    background: linear-gradient(to bottom right,
+.HeroLandingPage {
+  background: linear-gradient(to bottom right,
           rgb(212, 232, 255) 0%,
           rgb(216, 234, 255) 30%,
           rgb(175, 213, 255) 70%,
           rgb(251, 253, 255) 100%);
-          height: 100vh;
-          display: flex;
-          flex-direction: column;
-          
-}
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 
-.navbar_header {
-    width: 870px;
+  .navbar_header {
+    width: 80%;
+    padding: 35px 40px;
     background: linear-gradient(180deg, #FFFFFF 60%, #FFFFFF 20%);
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    height: 60px;
-    border-radius: 20px;
+    height: 80px;
     position: fixed;
     z-index: 10000;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(12px);
-    border-radius: 16px;
+    border-radius: 40px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
-    margin: 35px 20% 0;
-    .navbar{
-        display: flex;
-        gap: 0 25px;
-        .nav {
-            color: black;
-            font-size: 24px;
-        }
+    margin: 40px 10%;
+
+    .logo {
+      width: 200px;
+      cursor: pointer;
     }
-    .Start {
-        height: 40px;
-        border-radius: 15px;
-        padding: 0 30px;
-        color: black;
-        background: rgba(255, 255, 255, 0.2); 
-        border: 1px solid rgba(255, 255, 255, 0.4);
-        border-radius: 50px; 
-        backdrop-filter: blur(20px); 
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-        transition: all 0.3s ease;
+
+    .navbar {
+      display: flex;
+      width: 40%;
+      justify-content: space-between;
+
+      .nav {
+        color: #212529;
         font-size: 24px;
-    }
-    .Start:hover {
+        font-weight: 450;
+        width: 30%;
+        align-items: center;
+        border: 1px solid transparent;
+        border-radius: 25px;
+        padding: 5px 0;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      }
+
+      .nav:hover {
+        border: 1px solid rgba(255, 255, 255, 0.4);
         background: rgba(255, 255, 255, 0.35);
-        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+      }
     }
 
-}
+    .Start {
+      padding: 5px 30px;
+      color: #212529;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 50px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 24px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.43) 0%, rgba(255, 255, 255, 0.215) 68.53%);
+
+    }
+
+    .Start:hover {
+      background: rgba(255, 255, 255, 0.35);
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+    }
+  }
 
 
-.Hero_start {
+  .Hero_start {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -65,45 +86,52 @@
     margin: auto 0;
     padding: 0 200px;
     text-align: center;
-    
+
     .main_title {
-        font-size: 96px;
-    }
-    .stay_focused {
-        font-size: 20px;
-        color: rgba(0, 0, 0, 0.57);
-        width: 650px;
-    }
-    .Hero_button {
-        cursor: pointer;
-        padding: 24px 48px;
-        background-color: #FFFFFF;
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.4);
-        font-size: 24px;
-        margin-top: 40px;
-    }
-}
-.Hero_start::before, .Hero_start::after {
-        content: "";
-        position: absolute;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.25);
-        backdrop-filter: blur(5px);
+      font-size: 96px;
+      font-weight: 800;
     }
 
-    .Hero_start::before {
-        top: 40%;
-        left: 14%;
-        width: 190px;
-        height: 190px;
+    .stay_focused {
+      font-size: 20px;
+      color: rgba(0, 0, 0, 0.57);
+      width: 650px;
     }
-    .Hero_start::after {
-        top: 10%;
-        right: 10%;
-        width: 120px;
-        height: 120px;
+
+    .Hero_button {
+      cursor: pointer;
+      padding: 16px 40px;
+      border-radius: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      font-size: 24px;
+      margin-top: 40px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.43) 0%, rgba(255, 255, 255, 0.215) 68.53%);
     }
-.Dashboard {
+
+    .Hero_button:hover {
+      background: rgba(255, 255, 255, 0.35);
+    }
+  }
+
+  // bubble
+  .Hero_start::before, .Hero_start::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(5px);
+  }
+
+  .Hero_start::before {
+    top: 40%;
+    left: 14%;
+    width: 190px;
+    height: 190px;
+  }
+
+  .Dashboard {
     margin: 0 80px;
+  }
+
 }
+

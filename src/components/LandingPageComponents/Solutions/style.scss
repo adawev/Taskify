@@ -25,12 +25,13 @@
     padding-bottom: 4rem;
     position: relative;
     .card__items {
-      position: relative;
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
       justify-content: center;
-      margin-top: 40px;
+      .row{
+        width: 100%;
+      }
     }
 
     .card__item {
@@ -54,11 +55,6 @@
     }
 
     .card__title {
-      position: absolute;
-      width: 273px;
-      height: 58px;
-      top: 37px;
-      left: 34px;
       font-family: 'Inter', sans-serif;
       font-size: 24px;
       font-weight: 800;
@@ -66,18 +62,8 @@
     }
 
     .card__description {
-      position: absolute;
-      top: 115px;
-      left: 47px;
-      width: 229px;
-      height: 186px;
       font-size: 14px;
       font-weight: 450;
-    }
-
-    .card__item {
-      width: 323px;
-      height: 382px;
     }
 
     .card__item {
@@ -106,7 +92,7 @@
 
     .img-sm {
       width: 100px;
-      height: 120px;
+      height: 100px;
     }
 
     // background Circle
