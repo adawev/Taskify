@@ -1,5 +1,5 @@
 import './style.scss'
-import logo from './images/taskify_logo.png'
+import logo from '../../../images/taskify_logo.png'
 
 // import Dashboard from './images/Dashboard.png'
 function Hero() {
