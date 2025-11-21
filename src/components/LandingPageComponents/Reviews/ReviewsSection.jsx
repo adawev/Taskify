@@ -1,10 +1,16 @@
 import "./style.scss"
 import userIcon from "../../../images/user.png";
+import bgCircle from "../../../images/bgCircle.png";
 
 import {Swiper, SwiperSlide} from "swiper/react";
 import {EffectCards, Navigation} from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-cards';
+import "swiper/css/navigation";
 function ReviewsSection() {
     return <div className="ReviewsSection">
+        <img src={bgCircle} alt="" className={"bgCircleTop"}/>
+
         <div className="miniInformation">
             <p className="textSlogan">What people are saying</p>
             <p className="textMain">Reviews</p>
@@ -13,7 +19,10 @@ function ReviewsSection() {
             effect={'cards'}
             grabCursor={true}
             modules={[EffectCards, Navigation]}
-            navigation={true}
+            navigation={{
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }}
             className="mySwiper"
         >
             <SwiperSlide >
@@ -173,6 +182,9 @@ function ReviewsSection() {
                 </div>
             </SwiperSlide>
         </Swiper>
+        <div className="swiper-button-prev"></div>
+        <div className="swiper-button-next"></div>
+
     </div>
 }
 
