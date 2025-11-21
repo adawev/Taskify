@@ -28,17 +28,35 @@
     font-weight: 900 !important;
   }
 
+<<<<<<< HEAD
   /* Main text */
   .text-primary {
     color: #5CA9FF !important;
   }
+=======
+/* Main text */
+
+.text-primary {
+    color: #0d0255 !important;
+}
+>>>>>>> 72ae9ec (Local o'zgarishlar saqlandi)
 
   .text-dark {
     color: #000 !important;
   }
 
+<<<<<<< HEAD
   .solutions_card {
     padding-bottom: 4rem;
+=======
+.fw-black {
+    font-weight: 900;
+}
+
+/* Solution Card  */
+
+.card__items {
+>>>>>>> 72ae9ec (Local o'zgarishlar saqlandi)
     position: relative;
     .card__items {
       display: flex;
@@ -110,7 +128,18 @@
       overflow: visible;
     }
 
+<<<<<<< HEAD
     /* Card image */
+=======
+.card__item {
+    position: relative;
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 5px 0px 18.4px 0px #00000012;
+    overflow: visible;
+}
+>>>>>>> 72ae9ec (Local o'zgarishlar saqlandi)
 
 
     .solution-avatar {
