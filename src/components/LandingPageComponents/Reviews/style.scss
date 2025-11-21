@@ -1,3 +1,107 @@
-.ReviewsSection{
+.ReviewsSection {
+  padding-bottom: 120px;
 
+  .swiper {
+    width: 390px;
+    height: 330px;
+    margin-top: 50px;
+  }
+
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    color: #fff;
+
+    .wrapperSlide {
+      padding: 40px;
+
+      .userInfoSlide {
+        display: flex;
+        align-items: center;
+        img{
+          width: 60px;
+          height: 60px;
+        }
+        .info {
+          margin-left: 10px;
+        }
+      }
+
+      .commentSlide {
+        font-weight: 400;
+        font-size: 15.8px;
+        line-height: 23.04px;
+        vertical-align: middle;
+        margin-top: 30px;
+      }
+
+      .dateSlide {
+        margin-top: 20px;
+      }
+    }
+
+    &:nth-child(1n) {
+      background-color: rgb(206, 17, 17);
+    }
+
+    &:nth-child(2n) {
+      background-color: rgb(0, 140, 255);
+    }
+
+    &:nth-child(3n) {
+      background-color: rgb(10, 184, 111);
+    }
+
+    &:nth-child(4n) {
+      background-color: rgb(211, 122, 7);
+    }
+
+    &:nth-child(5n) {
+      background-color: rgb(118, 163, 12);
+    }
+
+    &:nth-child(6n) {
+      background-color: rgb(180, 10, 47);
+    }
+
+    &:nth-child(7n) {
+      background-color: rgb(35, 99, 19);
+    }
+
+    &:nth-child(8n) {
+      background-color: rgb(0, 68, 255);
+    }
+
+    &:nth-child(9n) {
+      background-color: rgb(218, 12, 218);
+    }
+
+    &:nth-child(10n) {
+      background-color: rgb(54, 94, 77);
+    }
+  }
+  .swiper-button-prev {
+    left: -170px !important;
+    border: 2px solid #FFF;
+    padding: 50px;
+    border-radius: 100px;
+    transform: scale(0.5);
+  }
+
+  .swiper-button-next {
+    right: -170px !important;
+    border: 2px solid #FFF;
+    padding: 50px;
+    border-radius: 100px;
+    transform: scale(0.5);
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: white !important;
+
+  }
 }
+

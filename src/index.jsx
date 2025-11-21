@@ -7,7 +7,9 @@ import './index.css'
 import {Provider} from "react-redux";
 import store from "./store/store";
 import { Toaster } from 'sonner';
-
+import 'swiper/css';
+import 'swiper/css/effect-cards';
+import "swiper/css/navigation";
 
 
 
