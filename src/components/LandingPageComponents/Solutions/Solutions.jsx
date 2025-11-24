@@ -5,10 +5,12 @@ import avatar3 from '../../../images/avatar3.png'
 import avatar4 from '../../../images/avatar4.png'
 import avatar5 from '../../../images/avatar5.png'
 import avatar6 from '../../../images/avatar6.png'
+import bgCircle from '../../../images/bgCircle.png'
 
 
 function Solutions() {
     return <div className="SolutionsLandingPage">
+        <img src={bgCircle} alt="" className={"bgCircleBottom"}/>
 
         {/* Main texts */}
         <div className="container">
@@ -29,7 +31,6 @@ function Solutions() {
 
         {/* Solution cards */}
         <div className="container py-5 solutions_card">
-            <div className="bgCircle"></div>
 
             <div className="card__items">
 

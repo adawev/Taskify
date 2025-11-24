@@ -1,103 +1,86 @@
-@charset "UTF-8";
 /* Core styles */
 .SolutionsLandingPage {
-  /* background: #ccc; */
-  padding-top: 2rem;
-  background: linear-gradient(to top right, rgb(212, 232, 255) 0%, rgb(216, 234, 255) 30%, rgb(175, 213, 255) 70%, rgb(251, 253, 255) 100%);
+  padding-top: 10em;
+  padding-bottom: 100px;
+  background: linear-gradient(to bottom, rgb(190, 220, 255) 0%, rgb(210, 230, 255) 20%, rgb(255, 255, 255) 50%, rgb(210, 230, 255) 80%, rgb(200, 225, 255) 100%);
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
 }
-
-.fw-black {
+.SolutionsLandingPage .bgCircleBottom {
+  position: absolute;
+  bottom: -500px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  z-index: 0;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.SolutionsLandingPage .fw-black {
   font-weight: 900 !important;
 }
-
-/* Main text */
-.text-primary {
-  color: #0d0255 !important;
+.SolutionsLandingPage .text-primary {
+  color: #5CA9FF !important;
 }
-
-.text-dark {
+.SolutionsLandingPage .text-dark {
   color: #000 !important;
 }
-
-.fw-black {
-  font-weight: 900;
-}
-
-/* Solution Card  */
-/* .container {
-    margin-left: 50px !important;
-    margin-right: 50px !important;
-} */
-.card__items {
+.SolutionsLandingPage .solutions_card {
+  padding-bottom: 4rem;
   position: relative;
+}
+.SolutionsLandingPage .solutions_card .card__items {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
-  margin-top: 40px;
 }
-
-.card__item {
+.SolutionsLandingPage .solutions_card .card__items .row {
+  width: 100%;
+}
+.SolutionsLandingPage .solutions_card .card__item {
   position: relative;
-  background-color: #fff;
-  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
   padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.8);
   width: 323px;
   height: 326px;
-  top: 30px;
-  left: 40px;
   overflow: visible;
-  transition: all 0.8s ease-in-out;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
 }
-
-.card__item:hover {
-  transform: scale(1.1);
-}
-
-.card__title {
+.SolutionsLandingPage .solutions_card .card__item::before {
+  content: "";
   position: absolute;
-  width: 273px;
-  height: 58px;
-  top: 37px;
-  left: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+  border-radius: 20px 20px 0 0;
+}
+.SolutionsLandingPage .solutions_card .card__item:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgb(255, 255, 255);
+  border-color: rgba(255, 255, 255, 0.8);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 100%);
+}
+.SolutionsLandingPage .solutions_card .card__item .card__title {
   font-family: "Inter", sans-serif;
   font-size: 24px;
-  font-weight: 900;
+  font-weight: 800;
   text-align: right;
 }
-
-.card__description {
-  position: absolute;
-  top: 115px;
-  left: 47px;
-  width: 229px;
-  height: 186px;
+.SolutionsLandingPage .solutions_card .card__item .card__description {
   font-size: 14px;
+  font-weight: 450;
 }
-
-.card__item {
-  width: 323px;
-  height: 382px;
-}
-
-.card__item {
-  position: relative;
-  /* Bu kerak — ichidagi absolute elementni joylashtirish uchun */
-  background: #fff;
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 5px 0px 18.4px 0px rgba(0, 0, 0, 0.0705882353);
-  overflow: visible;
-}
-
-.col-3 {
-  margin: 40px;
-}
-
-/* Card image */
-.solution-avatar {
+.SolutionsLandingPage .solutions_card .card__item .solution-avatar {
   position: absolute;
   top: -40px;
   left: -50px;
@@ -106,11 +89,20 @@
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   z-index: 10;
+  transition: all 0.3s ease;
 }
-
-.img-sm {
+.SolutionsLandingPage .solutions_card .card__item:hover .solution-avatar {
+  transform: scale(1.1);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+.SolutionsLandingPage .solutions_card .card__item .img-sm {
   width: 100px;
-  height: 120px;
-}/*# sourceMappingURL=style.css.map */
+  height: 100px;
+}
+.SolutionsLandingPage .solutions_card .col-3 {
+  margin: 40px;
+}
+/*# sourceMappingURL=style.css.map */
