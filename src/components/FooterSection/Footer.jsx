@@ -19,7 +19,7 @@ function Footer() {
                     <div className="col-12">
                         <ul className="footer-items d-flex flex-row">
                             <li className="footer-item">
-                                <a href="/home" className="footer-link text-dark">Home</a>
+                                <a href="/" className="footer-link text-dark">Home</a>
                             </li>
                             <li className="footer-item">
                                 <a href="/solutions" className="footer-link text-dark">Solutions</a>
