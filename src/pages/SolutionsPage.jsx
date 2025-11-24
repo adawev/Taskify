@@ -19,10 +19,12 @@ function SolutionsPage() {
   }, []);
   return (
     <div className="SolutionsPage">
-      <div className="stickyWrapper">
-        <SolutionSection active={active} />
+      <div className="solutionsContent">
+        <div className="stickyWrapper">
+          <SolutionSection active={active} />
+        </div>
+        <div className="scrollSpace"></div>
       </div>
-      <div className="scrollSpace"></div>
       <Footer/>
     </div>
   );
