@@ -1,7 +1,6 @@
 .FooterSection {
   /* Background */
-  background: linear-gradient(to top right, rgb(212, 232, 255) 0%, rgb(216, 234, 255) 30%, rgb(175, 213, 255) 70%, rgb(251, 253, 255) 100%);
-  position: relative;
+  background: linear-gradient(to top, rgb(200, 225, 255) 0%, rgb(220, 235, 255) 20%, rgb(255, 255, 255) 50%, rgb(200, 225, 255) 80%, rgb(160, 205, 255) 100%);
   /* Footer links */
   /* footer bottom text */
 }
@@ -10,11 +9,12 @@
   width: 1015px;
   height: 58px;
   left: 260px;
-  bottom: 330px;
+  top: 3130px;
   font-size: 36px;
   font-family: "Inter";
   font-weight: 300;
   text-align: center;
+  z-index: 4;
 }
 .FooterSection .footer-items {
   justify-content: space-between;

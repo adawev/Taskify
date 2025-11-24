@@ -10,10 +10,10 @@ function Footer() {
                         <img src={Logo} alt="Our logo" className="footer-logo img-fluid img-sm " />
                     </div>
                     <div className="col">
-                        <h3 className="footer-text ">
-                            Taskify — a simple and intuitive task management tool designed to help you
-                            organize your daily work, track progress, and stay productive.
-                        </h3>
+                        <h2 className="footer-text">
+                            Taskify — a simple and intuitive task management tool designed to 
+                            help you organize your daily work, track progress, and stay productive.
+                        </h2>
                     </div>
                     <div className="col-12">
                         <ul className="footer-items d-flex flex-row">
