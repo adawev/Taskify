@@ -1,21 +1,14 @@
 import './style.scss'
-import Logo from './images/logo.png'
+import Logo from '../../images/taskify_logo.png'
 
 function Footer() {
     return <div className="FooterSection">
 
-        <span>jgkrejgnkefdkjvnrktjf</span>
-        <p>oj34nfrdj</p>
-        <p>oj34nfrdj</p>
-        <p>oj34nfrdj</p>
-        <p>oj34nfrdj</p>
-        <p>oj34nfrdj</p>
-
         <footer className="footer-section" id="footer">
             <div className="container">
                 <div className="row">
-                    <div className="col-12 d-flex justify-content-center align-items-center">
-                        <img src={Logo} alt="Our logo" className="footer-logo img-fluid img-sm " />
+                    <div className="logoWrapper">
+                        <img src={Logo} alt="Our logo" className="footer-logo" />
                     </div>
                     <div className="col">
                         <h3 className="footer-text ">
@@ -26,37 +19,20 @@ function Footer() {
                     <div className="col-12">
                         <ul className="footer-items d-flex flex-row">
                             <li className="footer-item">
-                                <a href="#" className="footer-link text-dark">Home</a>
+                                <a href="/home" className="footer-link text-dark">Home</a>
                             </li>
                             <li className="footer-item">
-                                <a href="#" className="footer-link text-dark">Solutions</a>
+                                <a href="/solutions" className="footer-link text-dark">Solutions</a>
                             </li>
                             <li className="footer-item">
-                                <a href="#" className="footer-link text-dark">About</a>
+                                <a href="/about" className="footer-link text-dark">About</a>
                             </li>
                             <li className="footer-item">
-                                <a href="#" className="footer-link text-dark">Contacts</a>
+                                <a href="/register" className="footer-link text-dark">Register</a>
                             </li>
                         </ul>
                     </div>
                     <div className="col ">
-                        <div className="footer-bt__text  d-flex flex-row">
-                            <h2 className="bt-text">
-                                Terms & Conditions
-                            </h2>
-                            <h2 className="bt-text">
-                                |
-                            </h2>
-                            <h2 className="bt-text">
-                                Privacy Policy
-                            </h2>
-                            <h2 className="bt-text">
-                                |
-                            </h2>
-                            <h2 className="bt-text">
-                                Disclosures
-                            </h2>
-                        </div>
                         <hr className='line' />
 
                         <div className="col">
