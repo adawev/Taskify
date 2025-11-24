@@ -11,8 +11,6 @@ function Hero() {
                     manager.</p>
                 <button className='Hero_button'>Get started</button>
             </section>
-
-
         </div>
     </div>
 }
