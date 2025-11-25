@@ -1,6 +1,7 @@
 import logo from "../../images/taskify_logo.png";
 import './style.scss'
 import {Outlet, Link} from "react-router-dom";
+import Footer from "../FooterSection/Footer";
 
 function Navbar() {
     return <div className="wrapperNavbar">
@@ -16,6 +17,7 @@ function Navbar() {
             <button className='Start'>Start now</button>
         </div>
         <Outlet/>
+        <Footer/>
     </div>
 
 }

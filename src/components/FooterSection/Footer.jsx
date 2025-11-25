@@ -1,5 +1,6 @@
 import './style.scss'
 import Logo from '../../images/taskify_logo.png'
+import {Link} from "react-router-dom";
 
 function Footer() {
     return <div className="FooterSection">
@@ -19,16 +20,16 @@ function Footer() {
                     <div className="col-12">
                         <ul className="footer-items d-flex flex-row">
                             <li className="footer-item">
-                                <a href="/home" className="footer-link text-dark">Home</a>
+                                <Link to="/" className="footer-link text-dark">Home</Link>
                             </li>
                             <li className="footer-item">
-                                <a href="/solutions" className="footer-link text-dark">Solutions</a>
+                                <Link to="/solutions" className="footer-link text-dark">Solutions</Link>
                             </li>
                             <li className="footer-item">
-                                <a href="/about" className="footer-link text-dark">About</a>
+                                <Link to="/about" className="footer-link text-dark">About</Link>
                             </li>
                             <li className="footer-item">
-                                <a href="/register" className="footer-link text-dark">Register</a>
+                                <Link to="/register" className="footer-link text-dark">Register</Link>
                             </li>
                         </ul>
                     </div>

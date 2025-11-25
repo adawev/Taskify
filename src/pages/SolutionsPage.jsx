@@ -25,7 +25,6 @@ function SolutionsPage() {
         </div>
         <div className="scrollSpace"></div>
       </div>
-      <Footer/>
     </div>
   );
 }

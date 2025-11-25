@@ -8,7 +8,6 @@ function LandingPage() {
         <Hero/>
         <Solutions/>
         <ReviewsSection/>
-        <Footer/>
     </div>
 }
 export default LandingPage;

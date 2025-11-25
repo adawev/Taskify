@@ -12,7 +12,6 @@ function App() {
                 <Route path={'/'} element={<Navbar/>}>
                     <Route path="/" element={<LandingPage/>}/>
                     <Route path="/solutions" element={<SolutionsPage/>}/>
-                    
                     <Route path="/about" element={<AboutPage/>}/>
                 </Route> 
             </Routes>
