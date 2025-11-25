@@ -1,13 +1,15 @@
 import './style.scss'
-import Logo from './images/logo.png'
+import Logo from '../../images/taskify_logo.png'
+import {Link} from "react-router-dom";
 
 function Footer() {
     return <div className="FooterSection">
+
         <footer className="footer-section" id="footer">
             <div className="container">
                 <div className="row">
-                    <div className="col-12 d-flex justify-content-center align-items-center">
-                        <img src={Logo} alt="Our logo" className="footer-logo img-fluid img-sm " />
+                    <div className="logoWrapper">
+                        <img src={Logo} alt="Our logo" className="footer-logo" />
                     </div>
                     <div className="col">
                         <h2 className="footer-text">
@@ -18,37 +20,20 @@ function Footer() {
                     <div className="col-12">
                         <ul className="footer-items d-flex flex-row">
                             <li className="footer-item">
-                                <a href="#" className="footer-link text-dark">Home</a>
+                                <Link to="/" className="footer-link text-dark">Home</Link>
                             </li>
                             <li className="footer-item">
-                                <a href="#" className="footer-link text-dark">Solutions</a>
+                                <Link to="/solutions" className="footer-link text-dark">Solutions</Link>
                             </li>
                             <li className="footer-item">
-                                <a href="#" className="footer-link text-dark">About</a>
+                                <Link to="/about" className="footer-link text-dark">About</Link>
                             </li>
                             <li className="footer-item">
-                                <a href="#" className="footer-link text-dark">Contacts</a>
+                                <Link to="/register" className="footer-link text-dark">Register</Link>
                             </li>
                         </ul>
                     </div>
                     <div className="col ">
-                        <div className="footer-bt__text  d-flex flex-row">
-                            <h2 className="bt-text">
-                                Terms & Conditions
-                            </h2>
-                            <h2 className="bt-text">
-                                |
-                            </h2>
-                            <h2 className="bt-text">
-                                Privacy Policy
-                            </h2>
-                            <h2 className="bt-text">
-                                |
-                            </h2>
-                            <h2 className="bt-text">
-                                Disclosures
-                            </h2>
-                        </div>
                         <hr className='line' />
 
                         <div className="col">

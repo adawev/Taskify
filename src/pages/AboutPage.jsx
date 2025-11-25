@@ -6,7 +6,6 @@ function AboutPage() {
     return <div className="AboutPage">
         <Hero/>
         about
-        <Footer/>
     </div>
 }
 export default AboutPage;
