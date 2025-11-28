@@ -1,6 +1,6 @@
 import './style.scss'
 import Logo from '../../images/taskify_logo.png'
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Footer() {
     return <div className="FooterSection">
@@ -13,7 +13,7 @@ function Footer() {
                     </div>
                     <div className="col">
                         <h2 className="footer-text">
-                            Taskify — a simple and intuitive task management tool designed to 
+                            Taskify — a simple and intuitive task management tool designed to
                             help you organize your daily work, track progress, and stay productive.
                         </h2>
                     </div>
