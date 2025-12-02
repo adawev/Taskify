@@ -13,15 +13,6 @@ const Sidebar = () => {
         avatar: null,
     };
 
-    const getInitials = (name) => {
-        if (!name) return 'U';
-        const parts = name.trim().split(' ');
-        if (parts.length >= 2) {
-            return `${parts[0][0]}${parts[1][0]}`.toUpperCase();
-        }
-        return name.charAt(0).toUpperCase();
-    };
-
     return (
         <div className="sidebar">
             <div className="sidebar-header">
@@ -54,7 +45,7 @@ const Sidebar = () => {
                             className="user-avatar"
                             style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}
                         >
-                            {getInitials(currentUser.name)}
+                            {currentUser.name}
                         </div>
                         <div className="user-info">
                             <span className="user-name">{currentUser.name}</span>

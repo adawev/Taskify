@@ -13,14 +13,6 @@ const TaskCard = ({ task, onDragStart }) => {
         });
     };
 
-    const getInitials = (name) => {
-        if (!name) return '?';
-        const parts = name.trim().split(' ');
-        if (parts.length >= 2) {
-            return `${parts[0][0]}${parts[1][0]}`.toUpperCase();
-        }
-        return name.charAt(0).toUpperCase();
-    };
 
     const getAvatarColor = (index) => {
         const colors = [
@@ -52,7 +44,7 @@ const TaskCard = ({ task, onDragStart }) => {
                                 style={{ background: getAvatarColor(index) }}
                                 title={member.name}
                             >
-                                {getInitials(member.name)}
+                                {member.name}
                             </div>
                         ))}
                         {task.assignedTo && task.assignedTo.length > 3 && (
