@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Button, Form, InputGroup, Card } from 'react-bootstrap';
 import { toast } from 'sonner';
+import CreateTeamModal from '../components/Modals/CreateTeamModal';
 import './TeamsPage.scss';
 
 const TeamsPage = () => {
@@ -167,6 +168,11 @@ const TeamsPage = () => {
                     </div>
                 )}
             </Container>
+
+            <CreateTeamModal
+                show={showCreateModal}
+                onHide={() => setShowCreateModal(false)}
+            />
         </div>
     );
 };

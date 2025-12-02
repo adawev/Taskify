@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Container, Button, Form, InputGroup, Nav } from 'react-bootstrap';
 import { toast } from 'sonner';
 import TaskCard from '../components/TaskCard/TaskCard';
+import AddTaskModal from '../components/Modals/AddTaskModal';
 import './TeamPage.scss';
 
 const TeamPage = () => {
@@ -291,6 +292,12 @@ const TeamPage = () => {
                     </div>
                 </div>
             </Container>
+
+            <AddTaskModal
+                show={showAddTaskModal}
+                onHide={() => setShowAddTaskModal(false)}
+                teamId={teamId}
+            />
         </div>
     );
 };
