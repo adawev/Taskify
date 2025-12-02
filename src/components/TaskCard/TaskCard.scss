@@ -1,0 +1,93 @@
+.task-card {
+    background: white;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s;
+    cursor: grab;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    &:active {
+        cursor: grabbing;
+    }
+
+    .card-body {
+        padding: 1.25rem;
+    }
+
+    .task-title {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #2d3748;
+        margin: 0 0 1rem 0;
+        line-height: 1.5;
+    }
+
+    .task-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+
+        .task-members {
+            display: flex;
+            gap: 0.25rem;
+            align-items: center;
+
+            .member-avatar {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: 700;
+                font-size: 0.75rem;
+                border: 2px solid white;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                margin-left: -8px;
+                transition: transform 0.2s;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:hover {
+                    transform: scale(1.1);
+                    z-index: 10;
+                }
+
+                &.more {
+                    background: #e2e8f0;
+                    color: #4a5568;
+                    font-size: 0.625rem;
+                }
+            }
+        }
+
+        .task-date {
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+            font-size: 0.75rem;
+            color: #718096;
+            white-space: nowrap;
+
+            i {
+                font-size: 0.875rem;
+                color: #a0aec0;
+            }
+        }
+    }
+}
+
+// Dragging state
+.task-card.dragging {
+    opacity: 0.5;
+    transform: rotate(2deg);
+}
