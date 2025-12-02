@@ -14,56 +14,16 @@
     left: 0;
     top: 0;
     z-index: 100;
-    box-shadow:
-        0 8px 32px rgba(31, 38, 135, 0.15),
-        inset 1px 0 0 rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
     border-right: 1px solid rgba(255, 255, 255, 0.18);
-    overflow: hidden;
-
-    // Glass reflection effect
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 100%;
-        background: linear-gradient(
-            180deg,
-            rgba(255, 255, 255, 0.15) 0%,
-            rgba(255, 255, 255, 0.05) 50%,
-            rgba(255, 255, 255, 0) 100%
-        );
-        pointer-events: none;
-        z-index: 1;
-    }
-
-    // Subtle glow effect
-    &::after {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(
-            circle,
-            rgba(255, 255, 255, 0.1) 0%,
-            transparent 70%
-        );
-        pointer-events: none;
-        animation: subtle-glow 8s ease-in-out infinite;
-        z-index: 0;
-    }
 
     .sidebar-header {
         padding: 2rem 1.5rem;
         border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 1rem;
-        position: relative;
-        z-index: 2;
         background: linear-gradient(
             135deg,
             rgba(255, 255, 255, 0.08) 0%,
@@ -71,10 +31,9 @@
         );
 
         .sidebar-logo {
-            width: 40px;
-            height: 40px;
+            width: 90%;
+            height: 60px;
             object-fit: contain;
-            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
         }
 
         .sidebar-brand {
@@ -85,7 +44,6 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin: 0;
-            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
         }
     }
 
@@ -93,10 +51,7 @@
         flex: 1;
         padding: 1.5rem 0.75rem;
         overflow-y: auto;
-        position: relative;
-        z-index: 2;
 
-        // Custom scrollbar for glass effect
         &::-webkit-scrollbar {
             width: 6px;
         }
@@ -125,76 +80,26 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 0.95rem;
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
             border-radius: 12px;
-            position: relative;
-            overflow: hidden;
             backdrop-filter: blur(10px);
 
             i {
                 font-size: 1.2rem;
                 width: 24px;
                 text-align: center;
-                position: relative;
-                z-index: 2;
                 transition: transform 0.3s ease;
             }
 
-            span {
-                position: relative;
-                z-index: 2;
-            }
-
-            // Glass shimmer effect
-            &::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(
-                    90deg,
-                    transparent,
-                    rgba(255, 255, 255, 0.3),
-                    transparent
-                );
-                transition: left 0.5s ease;
-            }
-
-            // Glass background
-            &::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
+            &:hover {
+                color: #1a202c;
                 background: linear-gradient(
                     135deg,
                     rgba(255, 255, 255, 0.15) 0%,
                     rgba(255, 255, 255, 0.05) 100%
                 );
-                opacity: 0;
-                transition: opacity 0.3s ease;
-                border-radius: 12px;
-                z-index: 1;
-            }
-
-            &:hover {
-                color: #1a202c;
                 transform: translateX(5px);
-                box-shadow:
-                    0 4px 15px rgba(0, 0, 0, 0.1),
-                    inset 0 1px 0 rgba(255, 255, 255, 0.4);
-
-                &::before {
-                    left: 100%;
-                }
-
-                &::after {
-                    opacity: 1;
-                }
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 
                 i {
                     transform: scale(1.1);
@@ -209,19 +114,12 @@
                 );
                 color: #1a202c;
                 font-weight: 600;
-                box-shadow:
-                    0 8px 24px rgba(49, 130, 206, 0.15),
-                    inset 0 1px 0 rgba(255, 255, 255, 0.6),
-                    inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+                box-shadow: 0 8px 24px rgba(49, 130, 206, 0.15);
                 border: 1px solid rgba(255, 255, 255, 0.3);
                 backdrop-filter: blur(20px);
 
                 i {
                     color: #3182ce;
-                }
-
-                &::after {
-                    opacity: 1;
                 }
             }
         }
@@ -230,8 +128,6 @@
     .sidebar-footer {
         padding: 1.5rem;
         border-top: 1px solid rgba(255, 255, 255, 0.12);
-        position: relative;
-        z-index: 2;
         background: linear-gradient(
             135deg,
             rgba(255, 255, 255, 0.08) 0%,
@@ -245,7 +141,7 @@
             padding: 0.875rem;
             border-radius: 14px;
             cursor: pointer;
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
             background: linear-gradient(
                 135deg,
                 rgba(255, 255, 255, 0.15) 0%,
@@ -253,23 +149,6 @@
             );
             border: 1px solid rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
-            position: relative;
-            overflow: hidden;
-
-            &::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                height: 1px;
-                background: linear-gradient(
-                    90deg,
-                    transparent,
-                    rgba(255, 255, 255, 0.5),
-                    transparent
-                );
-            }
 
             &:hover {
                 background: linear-gradient(
@@ -278,9 +157,7 @@
                     rgba(255, 255, 255, 0.1) 100%
                 );
                 transform: translateY(-3px);
-                box-shadow:
-                    0 8px 24px rgba(0, 0, 0, 0.12),
-                    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
                 border-color: rgba(255, 255, 255, 0.3);
             }
 
@@ -295,9 +172,7 @@
                 font-weight: 700;
                 font-size: 0.875rem;
                 background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                box-shadow:
-                    0 4px 12px rgba(102, 126, 234, 0.3),
-                    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+                box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
                 border: 2px solid rgba(255, 255, 255, 0.3);
             }
 
@@ -336,11 +211,8 @@
             backdrop-filter: blur(40px) saturate(180%);
             -webkit-backdrop-filter: blur(40px) saturate(180%);
             border: 1px solid rgba(255, 255, 255, 0.25);
-            box-shadow:
-                0 12px 40px rgba(31, 38, 135, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            box-shadow: 0 12px 40px rgba(31, 38, 135, 0.2);
             border-radius: 14px;
-            overflow: hidden;
             padding: 0.5rem;
 
             .dropdown-item {
@@ -349,33 +221,15 @@
                 align-items: center;
                 gap: 0.875rem;
                 color: rgba(26, 32, 44, 0.8);
-                transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+                transition: all 0.3s ease;
                 border-radius: 10px;
                 margin: 0.15rem 0;
-                position: relative;
-                overflow: hidden;
                 backdrop-filter: blur(10px);
 
                 i {
                     font-size: 1.125rem;
                     width: 22px;
                     transition: transform 0.3s ease;
-                }
-
-                &::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    background: linear-gradient(
-                        135deg,
-                        rgba(49, 130, 206, 0.15) 0%,
-                        rgba(49, 130, 206, 0.05) 100%
-                    );
-                    opacity: 0;
-                    transition: opacity 0.25s ease;
                 }
 
                 &:hover {
@@ -386,11 +240,6 @@
                     );
                     color: #3182ce;
                     transform: translateX(5px);
-                    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
-
-                    &::before {
-                        opacity: 1;
-                    }
 
                     i {
                         transform: scale(1.15);
@@ -402,17 +251,6 @@
                 }
             }
         }
-    }
-}
-
-@keyframes subtle-glow {
-    0%, 100% {
-        opacity: 0.3;
-        transform: translate(-50%, -50%) scale(1);
-    }
-    50% {
-        opacity: 0.5;
-        transform: translate(-50%, -50%) scale(1.1);
     }
 }
 
