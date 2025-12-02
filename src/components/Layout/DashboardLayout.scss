@@ -1,12 +1,38 @@
 .dashboard-layout {
     display: flex;
     min-height: 100vh;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: fixed;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+        background-size: 50px 50px;
+        animation: moveGrid 20s linear infinite;
+        pointer-events: none;
+    }
 
     .main-content {
         flex: 1;
         margin-left: 280px;
         overflow-y: auto;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+@keyframes moveGrid {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(50px, 50px);
     }
 }
 

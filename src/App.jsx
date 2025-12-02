@@ -4,6 +4,7 @@ import AboutPage from "./pages/AboutPage";
 import LandingPage from "./pages/LandingPage";
 import TeamsPage from "./pages/TeamsPage";
 import TeamPage from "./pages/TeamPage";
+import MyTasksPage from "./pages/MyTasksPage";
 import Navbar from "./components/Navbar/Navbar";
 import DashboardLayout from "./components/Layout/DashboardLayout";
 
@@ -22,7 +23,7 @@ function App() {
                 <Route path="/dashboard" element={<DashboardLayout />}>
                     <Route path="teams" element={<TeamsPage />} />
                     <Route path="team/:teamId" element={<TeamPage />} />
-                    <Route path="my-tasks" element={<TeamsPage />} />
+                    <Route path="my-tasks" element={<MyTasksPage />} />
                 </Route>
             </Routes>
         </div>
