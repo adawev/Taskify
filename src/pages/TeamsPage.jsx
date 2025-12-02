@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { Row, Col, Button, Form, InputGroup, Card } from 'react-bootstrap';
+import { Row, Col, Button, Card } from 'react-bootstrap';
 import { toast } from 'sonner';
 import CreateTeamModal from '../components/Modals/CreateTeamModal';
 import './TeamsPage.scss';
@@ -11,7 +11,6 @@ const TeamsPage = () => {
     const navigate = useNavigate();
     const { list: teams, loading } = useSelector(state => state.teams);
 
-    const [searchTerm, setSearchTerm] = useState('');
     const [showCreateModal, setShowCreateModal] = useState(false);
 
     // Mock data for development - replace with actual API calls later
@@ -20,20 +19,17 @@ const TeamsPage = () => {
         // dispatch(getTeamsRequest());
     }, [dispatch]);
 
-    const filteredTeams = teams.filter(team =>
-        team.name?.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
     const handleTeamClick = (teamId) => {
         navigate(`/team/${teamId}`);
     };
 
     const handleDeleteTeam = (teamId, e) => {
         e.stopPropagation();
-        if (window.confirm('Are you sure you want to delete this team?')) {
-            // dispatch(deleteTeamRequest(teamId));
-            toast.success('Team deleted successfully');
-        }
+        // dispatch(deleteTeamRequest(teamId));
+        toast.success('Team deleted successfully', {
+            description: 'The team has been removed from your workspace.',
+            duration: 3000,
+        });
     };
 
     const formatDate = (dateString) => {
@@ -86,21 +82,13 @@ const TeamsPage = () => {
         },
     ];
 
-    const displayTeams = teams.length > 0 ? filteredTeams : mockTeams;
+    const displayTeams = teams.length > 0 ? teams : mockTeams;
 
     return (
         <div className="teams-page">
             <div className="teams-header">
                     <h1 className="teams-title">My Teams</h1>
                     <div className="teams-actions">
-                        <InputGroup className="search-input">
-                            <Form.Control
-                                type="text"
-                                placeholder="Search"
-                                value={searchTerm}
-                                onChange={(e) => setSearchTerm(e.target.value)}
-                            />
-                        </InputGroup>
                         <Button
                             variant="primary"
                             className="create-team-btn"

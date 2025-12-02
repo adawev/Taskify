@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Form, InputGroup, Nav } from 'react-bootstrap';
+import { Button, Nav } from 'react-bootstrap';
 import TaskCard from '../components/TaskCard/TaskCard';
 import AddTaskModal from '../components/Modals/AddTaskModal';
 import './TeamPage.scss';
@@ -104,10 +104,6 @@ const MyTasksPage = () => {
         return mockTasks.filter(task => task.status === status);
     };
 
-    const filteredTasks = mockTasks.filter(task =>
-        task.title?.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
     const handleDragStart = (e, task) => {
         setDraggedTask(task);
         e.dataTransfer.effectAllowed = 'move';
@@ -141,14 +137,13 @@ const MyTasksPage = () => {
             <div className="team-header">
                     <h1 className="team-title">My Tasks</h1>
                     <div className="team-actions">
-                        <InputGroup className="search-input">
-                            <Form.Control
-                                type="text"
-                                placeholder="Search tasks..."
-                                value={searchTerm}
-                                onChange={(e) => setSearchTerm(e.target.value)}
-                            />
-                        </InputGroup>
+                        <Button
+                            className="add-task-btn"
+                            onClick={() => setShowAddTaskModal(true)}
+                        >
+                            <i className="bi bi-plus-circle me-2"></i>
+                            Create Task
+                        </Button>
                     </div>
                 </div>
 
@@ -200,7 +195,6 @@ const MyTasksPage = () => {
                         <div className="tasks-container">
                             {(activeTab === 'all' || activeTab === 'todo') &&
                                 filterTasksByStatus('todo')
-                                    .filter(task => task.title?.toLowerCase().includes(searchTerm.toLowerCase()))
                                     .map(task => (
                                         <TaskCard
                                             key={task.id}
@@ -224,7 +218,6 @@ const MyTasksPage = () => {
                         <div className="tasks-container">
                             {(activeTab === 'all' || activeTab === 'in_progress') &&
                                 filterTasksByStatus('in_progress')
-                                    .filter(task => task.title?.toLowerCase().includes(searchTerm.toLowerCase()))
                                     .map(task => (
                                         <TaskCard
                                             key={task.id}
@@ -248,7 +241,6 @@ const MyTasksPage = () => {
                         <div className="tasks-container">
                             {(activeTab === 'all' || activeTab === 'completed') &&
                                 filterTasksByStatus('completed')
-                                    .filter(task => task.title?.toLowerCase().includes(searchTerm.toLowerCase()))
                                     .map(task => (
                                         <TaskCard
                                             key={task.id}
