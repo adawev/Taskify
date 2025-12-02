@@ -1,8 +1,9 @@
 .create-modal {
     .modal-content {
-        border: none;
-        border-radius: 16px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     }
 
     .modal-header {
@@ -12,7 +13,7 @@
         .modal-title {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #2d3748;
+            color: #1a202c;
         }
 
         .btn-close {
@@ -29,17 +30,20 @@
             font-weight: 600;
             color: #4a5568;
             margin-bottom: 0.5rem;
+            font-size: 0.9375rem;
         }
 
         .form-control,
         .form-select {
             border-radius: 8px;
             border: 1px solid #e2e8f0;
-            padding: 0.625rem 1rem;
+            padding: 0.75rem 1rem;
+            background: white;
+            transition: all 0.2s ease;
 
             &:focus {
-                border-color: #667eea;
-                box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+                border-color: #3182ce;
+                box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
             }
 
             &.is-invalid {
@@ -53,12 +57,13 @@
 
         textarea.form-control {
             resize: vertical;
+            min-height: 100px;
         }
 
         .invalid-feedback {
             color: #e53e3e;
             font-size: 0.875rem;
-            margin-top: 0.25rem;
+            margin-top: 0.5rem;
         }
     }
 
@@ -69,9 +74,9 @@
 
         .btn {
             border-radius: 8px;
-            padding: 0.625rem 1.5rem;
+            padding: 0.75rem 1.5rem;
             font-weight: 600;
-            transition: all 0.2s;
+            transition: all 0.2s ease;
         }
 
         .btn-secondary {
@@ -86,12 +91,11 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #3182ce;
             border: none;
 
             &:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+                background: #2c5282;
             }
         }
     }

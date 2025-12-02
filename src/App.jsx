@@ -10,23 +10,21 @@ import DashboardLayout from "./components/Layout/DashboardLayout";
 
 function App() {
     return (
-        <div className={'container-fluid'}>
-            <Routes>
-                {/* Public routes with Navbar */}
-                <Route path="/" element={<Navbar />}>
-                    <Route index element={<LandingPage />} />
-                    <Route path="solutions" element={<SolutionsPage />} />
-                    <Route path="about" element={<AboutPage />} />
-                </Route>
+        <Routes>
+            {/* Public routes with Navbar */}
+            <Route path="/" element={<Navbar />}>
+                <Route index element={<LandingPage />} />
+                <Route path="solutions" element={<SolutionsPage />} />
+                <Route path="about" element={<AboutPage />} />
+            </Route>
 
-                {/* Dashboard routes with Sidebar */}
-                <Route path="/dashboard" element={<DashboardLayout />}>
-                    <Route path="teams" element={<TeamsPage />} />
-                    <Route path="team/:teamId" element={<TeamPage />} />
-                    <Route path="my-tasks" element={<MyTasksPage />} />
-                </Route>
-            </Routes>
-        </div>
+            {/* Dashboard routes with Sidebar */}
+            <Route path="/dashboard" element={<DashboardLayout />}>
+                <Route path="teams" element={<TeamsPage />} />
+                <Route path="team/:teamId" element={<TeamPage />} />
+                <Route path="my-tasks" element={<MyTasksPage />} />
+            </Route>
+        </Routes>
     );
 }
 
