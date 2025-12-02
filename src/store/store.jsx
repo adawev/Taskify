@@ -1,13 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import student from "./reducers/student";
-import paymentHistory from "./reducers/paymentHistory";
+import teams from "./reducers/teams";
+import tasks from "./reducers/tasks";
 import api from './middleware/api';
 
 export default configureStore({
     reducer: {
-        student,
-        paymentHistory,
+        teams,
+        tasks,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(api),
