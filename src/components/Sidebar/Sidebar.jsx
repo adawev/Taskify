@@ -31,7 +31,7 @@ const Sidebar = () => {
 
             <nav className="sidebar-nav">
                 <NavLink
-                    to="/teams"
+                    to="/dashboard/teams"
                     className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
                 >
                     <i className="bi bi-people-fill"></i>
@@ -39,7 +39,7 @@ const Sidebar = () => {
                 </NavLink>
 
                 <NavLink
-                    to="/my-tasks"
+                    to="/dashboard/my-tasks"
                     className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
                 >
                     <i className="bi bi-list-task"></i>
