@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { Container, Row, Col, Button, Form, InputGroup, Card } from 'react-bootstrap';
+import { Row, Col, Button, Form, InputGroup, Card } from 'react-bootstrap';
 import { toast } from 'sonner';
 import CreateTeamModal from '../components/Modals/CreateTeamModal';
 import './TeamsPage.scss';
@@ -90,8 +90,7 @@ const TeamsPage = () => {
 
     return (
         <div className="teams-page">
-            <Container fluid>
-                <div className="teams-header">
+            <div className="teams-header">
                     <h1 className="teams-title">My Teams</h1>
                     <div className="teams-actions">
                         <InputGroup className="search-input">
@@ -167,7 +166,6 @@ const TeamsPage = () => {
                         <p>No teams found. Create your first team to get started!</p>
                     </div>
                 )}
-            </Container>
 
             <CreateTeamModal
                 show={showCreateModal}

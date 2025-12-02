@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Container, Button, Form, InputGroup, Nav } from 'react-bootstrap';
+import { Button, Form, InputGroup, Nav } from 'react-bootstrap';
 import { toast } from 'sonner';
 import TaskCard from '../components/TaskCard/TaskCard';
 import AddTaskModal from '../components/Modals/AddTaskModal';
@@ -161,8 +161,7 @@ const TeamPage = () => {
 
     return (
         <div className="team-page">
-            <Container fluid>
-                <div className="team-header">
+            <div className="team-header">
                     <h1 className="team-title">{team.name}</h1>
                     <div className="team-actions">
                         <InputGroup className="search-input">
@@ -291,7 +290,6 @@ const TeamPage = () => {
                         </div>
                     </div>
                 </div>
-            </Container>
 
             <AddTaskModal
                 show={showAddTaskModal}

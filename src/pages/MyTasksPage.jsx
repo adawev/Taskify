@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Container, Form, InputGroup, Nav } from 'react-bootstrap';
+import { Form, InputGroup, Nav } from 'react-bootstrap';
 import TaskCard from '../components/TaskCard/TaskCard';
 import AddTaskModal from '../components/Modals/AddTaskModal';
 import './TeamPage.scss';
@@ -138,8 +138,7 @@ const MyTasksPage = () => {
 
     return (
         <div className="team-page">
-            <Container fluid>
-                <div className="team-header">
+            <div className="team-header">
                     <h1 className="team-title">My Tasks</h1>
                     <div className="team-actions">
                         <InputGroup className="search-input">
@@ -261,7 +260,6 @@ const MyTasksPage = () => {
                         </div>
                     </div>
                 </div>
-            </Container>
 
             <AddTaskModal
                 show={showAddTaskModal}
