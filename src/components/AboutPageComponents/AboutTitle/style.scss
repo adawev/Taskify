@@ -23,6 +23,7 @@ margin-top: clamp(4px, 2vw, 10px);
     background-color: white;
      width: clamp(175px, 50vw, 350px);
     height: clamp(100px, 50vw, 200px);
+    transition: all 0.3s ease;
 }
 p {
 font-size: clamp(14px, 2vw, 22px);
@@ -39,6 +40,11 @@ font-size: clamp(14px, 2vw, 20px);
 .card_about {
   width: clamp(200px, 50vw, 400px);
    margin-top: 10px;
+}
+.title_image:hover {
+    width: clamp(220px, 50vw, 375px);
+    height: clamp(120px, 50vw, 220px);
+    transition: all 0.3s ease;
 }
 .titles {
     display: flex;
