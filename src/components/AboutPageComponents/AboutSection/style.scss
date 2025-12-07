@@ -12,14 +12,14 @@
   justify-content: space-around;
   align-items: space-between;
   h1 {  
-    font-size: 64px;
+  font-size: clamp(32px, 5vw, 64px);
     font-weight: bold;
  text-align: center;
   }
   .about_info{
     width: 80%;
     height: 300px;
-    padding: 0 75px;
+    padding: 0 clamp(30px, 5px, 75px);
     background: rgba(255, 255, 255, 0.15);
     border-radius: 16px;
     display: flex;
@@ -29,7 +29,7 @@
     backdrop-filter: blur(12px);
   }
   .about_info span{
-    font-size: 40px;
+    font-size: clamp(16px, 5vw, 40px);
     text-align: center;
   }
   .mainAbout {
