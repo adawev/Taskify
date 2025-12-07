@@ -8,9 +8,11 @@ import MyTasksPage from "./pages/MyTasksPage";
 import Navbar from "./components/Navbar/Navbar";
 import DashboardLayout from "./components/Layout/DashboardLayout";
 
+
 function App() {
     return (
-        <Routes>
+
+            <Routes>
             {/* Public routes with Navbar */}
             <Route path="/" element={<Navbar />}>
                 <Route index element={<LandingPage />} />
@@ -25,6 +27,7 @@ function App() {
                 <Route path="my-tasks" element={<MyTasksPage />} />
             </Route>
         </Routes>
+
     );
 }
 
