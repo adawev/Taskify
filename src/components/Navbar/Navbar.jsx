@@ -14,7 +14,11 @@ function Navbar() {
                 <Link to="/solutions" className='nav'>Solutions</Link>
                 <Link to="/about" className='nav'>About</Link>
             </div>
+<<<<<<< HEAD
             <Link className='Start' to={'dashboard/teams'}>Start now</Link>
+=======
+            <Link to='/register' className='Start'>Start now</Link>
+>>>>>>> f7405e3 (registration)
         </div>
         <Outlet/>
         <Footer/>
