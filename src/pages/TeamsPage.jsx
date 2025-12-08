@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { Row, Col, Button, Card } from 'react-bootstrap';
 import { toast } from 'sonner';
 import CreateTeamModal from '../components/Modals/CreateTeamModal';

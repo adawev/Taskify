@@ -19,7 +19,7 @@ const about_title_data = [
         image:'https://avatars.githubusercontent.com/u/71268887?v=4',
         name:'Diyor Adashev',
         sphere:'Team Leader and Front-End Developer',
-        phoneNum:'+998885185189',
+        phoneNum:'+998932390002',
         telegram:'https://t.me/adawev',
         github_link:'https://github.com/adawev '
     },
@@ -32,7 +32,7 @@ const about_title_data = [
         github_link:'https://github.com/Darenyonok'
     },
     {
-        image:'https://iloft.com.ua/wp-content/uploads/bro-flow-600x600.webp',
+        image:'https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001877.png',
         name:'Otabek Haydarov',
         sphere:'Front end Developer',
         phoneNum:'+998885185189',
@@ -48,7 +48,7 @@ const about_title_data = [
         github_link:'https://github.com/muhammadnuruz'
     },
     {
-        image:'https://b-frant.ru/upload/iblock/110/11034c9212cbea486663e38ca6e2481b.jpg',
+        image:'https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001877.png',
         name:'Mag’rur Ibragimov',
         sphere:'Figma Designer',
         phoneNum:'+998885185189',

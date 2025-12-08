@@ -14,7 +14,7 @@ function Navbar() {
                 <Link to="/solutions" className='nav'>Solutions</Link>
                 <Link to="/about" className='nav'>About</Link>
             </div>
-            <button className='Start'>Start now</button>
+            <Link className='Start' to={'dashboard/teams'}>Start now</Link>
         </div>
         <Outlet/>
         <Footer/>
