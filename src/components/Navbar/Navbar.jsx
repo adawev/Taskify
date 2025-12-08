@@ -15,7 +15,7 @@ function Navbar() {
                 <Link to="/about" className='nav'>About</Link>
             </div>
 
-            <Link to='/register' className='Start'>Start now</Link>
+            <Link to='/login' className='Start'>Start now</Link>
 
         </div>
         <Outlet/>

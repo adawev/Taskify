@@ -6,7 +6,8 @@ import TeamsPage from "./pages/TeamsPage";
 import MyTasksPage from "./pages/MyTasksPage";
 import Navbar from "./components/Navbar/Navbar";
 import DashboardLayout from "./components/Layout/DashboardLayout";
-import RegistrationPage from "./pages/LoginPages/RegistrationPage/RegistrationPage";
+
+import LoginPage from "./pages/LoginPages/LoginPage_folder/LoginPage";
 
 
 function App() {
@@ -18,8 +19,8 @@ function App() {
                 <Route path="solutions" element={<SolutionsPage/>}/>
                 <Route path="about" element={<AboutPage/>}/>
             </Route>
-            <Route path="/">
-                <Route path='register' element={<RegistrationPage/>}/>
+            <Route path="/login"  element={<LoginPage/>}>
+              
             </Route>
             <Route path="/dashboard" element={<DashboardLayout/>}>
                 <Route path="teams" element={<TeamsPage/>}/>

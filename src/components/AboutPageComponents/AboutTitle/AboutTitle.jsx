@@ -21,8 +21,7 @@ function AboutTitle({about_title_data}) {
                         <div className="social_medias">
                             <div className="media" onClick={() => navigator.clipboard.writeText(i.phoneNum)}><img
                                 src={phone} alt=""/></div>
-                            <div className="media" onClick={() => window.open(i.telegram, "_blank")}><img src={mail_svg}
-                                                                                                          alt=""/></div>
+                            <div className="media" onClick={() => window.open(i.telegram, "_blank")}><img src={mail_svg}alt=""/></div>
                             <div className="media" onClick={() => window.open(i.github_link, "_blank")}><img
                                 src={github_mark} alt=""/></div>
                         </div>
