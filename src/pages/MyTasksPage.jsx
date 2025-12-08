@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { Button, Nav } from 'react-bootstrap';
 import TaskCard from '../components/TaskCard/TaskCard';
 import AddTaskModal from '../components/Modals/AddTaskModal';
-import './TeamPage.scss';
-
+import './TeamsPage.scss';
 const MyTasksPage = () => {
     const [activeTab, setActiveTab] = useState('all');
     const [showAddTaskModal, setShowAddTaskModal] = useState(false);

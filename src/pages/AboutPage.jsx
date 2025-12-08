@@ -16,29 +16,44 @@ const data = [
 ]
 const about_title_data = [
     {
-        image:'',
+        image:'https://avatars.githubusercontent.com/u/71268887?v=4',
         name:'Diyor Adashev',
         sphere:'Team Leader and Front-End Developer',
+        phoneNum:'+998885185189',
+        telegram:'https://t.me/adawev',
+        github_link:'https://github.com/adawev '
     },
         {
-        image:'',
+        image:'https://avatars.githubusercontent.com/u/161346740?v=4',
         name:'Shohjaxon Pirmamatov',
         sphere:'Front-End Developer',
+        phoneNum:'+998885185189',
+        telegram:'https://t.me/pirmamatovSh',
+        github_link:'https://github.com/Darenyonok'
     },
     {
-        image:'',
+        image:'https://avatars.githubusercontent.com/u/71268887?v=4',
         name:'Otabek Haydarov',
         sphere:'Front end Developer',
+        phoneNum:'+998885185189',
+        telegram:'https://t.me/iotabek11',
+        github_link:'https://github.com/otabek11haydarov'
     },
     {
-        image:'',
+        image:'https://avatars.githubusercontent.com/u/131769670?v=4',
         name:'Suxbatullayev Muhammad Nur',
         sphere:'Back end Developer',
+        phoneNum:'+998885185189',
+        telegram:'https://t.me/TheMuhammadNur',
+        github_link:'https://github.com/muhammadnuruz'
     },
     {
-        image:'',
+        image:'https://avatars.githubusercontent.com/u/71268887?v=4',
         name:'Mag’rur Ibragimov',
         sphere:'Figma Designer',
+        phoneNum:'+998885185189',
+        telegram:'https://t.me/ibrg1mv_M',
+        github_link:'https://github.com/magruribragimovvich-oss'
     },
 
 ]
