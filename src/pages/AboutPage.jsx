@@ -32,7 +32,7 @@ const about_title_data = [
         github_link:'https://github.com/Darenyonok'
     },
     {
-        image:'https://avatars.githubusercontent.com/u/71268887?v=4',
+        image:'https://iloft.com.ua/wp-content/uploads/bro-flow-600x600.webp',
         name:'Otabek Haydarov',
         sphere:'Front end Developer',
         phoneNum:'+998885185189',
@@ -48,7 +48,7 @@ const about_title_data = [
         github_link:'https://github.com/muhammadnuruz'
     },
     {
-        image:'https://avatars.githubusercontent.com/u/71268887?v=4',
+        image:'https://b-frant.ru/upload/iblock/110/11034c9212cbea486663e38ca6e2481b.jpg',
         name:'Mag’rur Ibragimov',
         sphere:'Figma Designer',
         phoneNum:'+998885185189',
