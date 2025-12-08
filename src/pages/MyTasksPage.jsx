@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
 import { Button, Nav } from 'react-bootstrap';
 import TaskCard from '../components/TaskCard/TaskCard';
 import AddTaskModal from '../components/Modals/AddTaskModal';
 import './TeamPage.scss';
 
 const MyTasksPage = () => {
-    const [searchTerm, setSearchTerm] = useState('');
     const [activeTab, setActiveTab] = useState('all');
     const [showAddTaskModal, setShowAddTaskModal] = useState(false);
     const [draggedTask, setDraggedTask] = useState(null);
@@ -18,10 +16,6 @@ const MyTasksPage = () => {
             title: 'Design new landing page',
             status: 'todo',
             teamName: 'Design Team',
-            assignedTo: [
-                { id: 1, name: 'John Doe' },
-                { id: 2, name: 'Jane Smith' },
-            ],
             createdAt: '2025-12-02',
         },
         {
@@ -29,9 +23,6 @@ const MyTasksPage = () => {
             title: 'Fix authentication bug',
             status: 'in_progress',
             teamName: 'Backend Team',
-            assignedTo: [
-                { id: 1, name: 'John Doe' },
-            ],
             createdAt: '2025-12-01',
         },
         {
@@ -39,10 +30,6 @@ const MyTasksPage = () => {
             title: 'Update documentation',
             status: 'todo',
             teamName: 'Documentation Team',
-            assignedTo: [
-                { id: 1, name: 'John Doe' },
-                { id: 3, name: 'Bob Johnson' },
-            ],
             createdAt: '2025-12-01',
         },
         {
@@ -50,10 +37,6 @@ const MyTasksPage = () => {
             title: 'Implement payment gateway',
             status: 'in_progress',
             teamName: 'Backend Team',
-            assignedTo: [
-                { id: 1, name: 'John Doe' },
-                { id: 4, name: 'Alice Williams' },
-            ],
             createdAt: '2025-11-30',
         },
         {
@@ -61,9 +44,6 @@ const MyTasksPage = () => {
             title: 'Code review for PR #123',
             status: 'completed',
             teamName: 'Frontend Team',
-            assignedTo: [
-                { id: 1, name: 'John Doe' },
-            ],
             createdAt: '2025-11-29',
         },
         {
@@ -71,10 +51,6 @@ const MyTasksPage = () => {
             title: 'Setup CI/CD pipeline',
             status: 'completed',
             teamName: 'DevOps Team',
-            assignedTo: [
-                { id: 1, name: 'John Doe' },
-                { id: 2, name: 'Jane Smith' },
-            ],
             createdAt: '2025-11-28',
         },
         {
@@ -82,9 +58,6 @@ const MyTasksPage = () => {
             title: 'Create API endpoints',
             status: 'in_progress',
             teamName: 'Backend Team',
-            assignedTo: [
-                { id: 1, name: 'John Doe' },
-            ],
             createdAt: '2025-11-27',
         },
         {
@@ -92,10 +65,6 @@ const MyTasksPage = () => {
             title: 'Design mobile app screens',
             status: 'todo',
             teamName: 'Design Team',
-            assignedTo: [
-                { id: 1, name: 'John Doe' },
-                { id: 2, name: 'Jane Smith' },
-            ],
             createdAt: '2025-11-26',
         },
     ];
