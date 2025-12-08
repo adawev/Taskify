@@ -59,7 +59,6 @@ const about_title_data = [
 ]
 function AboutPage() {
     return <div className="AboutPage">
-        <Hero/>
         <AboutSection/>
         <AboutMissions data={data}/>
         <AboutTitle about_title_data={about_title_data}/>

@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 
 function Footer() {
     return <div className="FooterSection">
+        <hr style={{color: "white"}}/>
 
         <footer className="footer-section" id="footer">
             <div className="container">
