@@ -115,6 +115,7 @@
       overflow: hidden;
       min-width: 0;
       position: relative;
+      height: 75vh;
 
       &::before {
         content: '';
@@ -127,13 +128,6 @@
         border-radius: 20px 20px 0 0;
       }
 
-      &:hover {
-        box-shadow:
-                0 12px 48px rgba(0, 0, 0, 0.15),
-                inset 0 1px 0 rgba(255, 255, 255, 1);
-        transform: translateY(-2px);
-        border-color: rgba(255, 255, 255, 0.7);
-      }
 
       .column-header {
         display: flex;

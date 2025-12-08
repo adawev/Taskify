@@ -9,7 +9,7 @@ const Sidebar = () => {
 
     // Mock user data
     const currentUser = {
-        name: 'Djeck Scott',
+        name: 'Pirmamatov Sh',
         avatar: null,
     };
 
@@ -42,13 +42,12 @@ const Sidebar = () => {
                     <Dropdown.Toggle as="div" className="user-profile">
                         <div
                             className="user-avatar"
-                            style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}
+                            style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', padding: "5px"}}
                         >
-                            {currentUser.name}
+                            P SH
                         </div>
                         <div className="user-info">
                             <span className="user-name">{currentUser.name}</span>
-                            <i className="bi bi-chevron-down"></i>
                         </div>
                     </Dropdown.Toggle>
 
@@ -56,11 +55,8 @@ const Sidebar = () => {
                         <Dropdown.Item onClick={() => navigate('/profile')}>
                             <i className="bi bi-person"></i> Profile
                         </Dropdown.Item>
-                        <Dropdown.Item onClick={() => navigate('/settings')}>
-                            <i className="bi bi-gear"></i> Settings
-                        </Dropdown.Item>
                         <Dropdown.Divider />
-                        <Dropdown.Item onClick={() => navigate('/logout')}>
+                        <Dropdown.Item onClick={() => navigate('/')}>
                             <i className="bi bi-box-arrow-right"></i> Logout
                         </Dropdown.Item>
                     </Dropdown.Menu>
