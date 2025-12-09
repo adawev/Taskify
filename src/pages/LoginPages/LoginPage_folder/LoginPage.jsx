@@ -2,6 +2,7 @@ import './LoginPage.scss'
 import profile_picture from '../../../images/registration_picture.png'
 import mail from '../../../images/inputMail.png'
 import lock from '../../../images/inputLock.png'
+import {Link} from "react-router-dom";
 function LoginPage() {
   return (
     <div className="LoginPage ">
