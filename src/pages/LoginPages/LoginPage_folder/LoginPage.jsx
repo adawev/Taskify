@@ -12,18 +12,11 @@ function LoginPage() {
 <div>
            <div className='Email_cont position_label'>
             <img src={mail} alt="" className='position_picture'/>
-            <input type="email" placeholder='Email'/>
+            <input type="email" placeholder='Email ID'/>
          </div>
          <div className='Password position_label'>  
             <img src={lock} alt="" className='position_picture'/>
             <input type="password" placeholder='Password'/>
-         </div>
-         <div className="checks">
-          <div className='remember_cont'>
-            <input type="checkbox" name="" id="" />
-            <label htmlFor="">Remember me?</label>
-        </div>
-          <a href="">Forgot password?</a>
          </div>
 </div>
           <button type="submit" className='submit_button'>
