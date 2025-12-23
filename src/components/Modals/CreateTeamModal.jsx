@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
 import { toast } from 'sonner';
 import './Modals.scss';
 
 const CreateTeamModal = ({ show, onHide }) => {
-    const dispatch = useDispatch();
     const [formData, setFormData] = useState({
         name: '',
         description: '',
@@ -30,17 +28,6 @@ const CreateTeamModal = ({ show, onHide }) => {
             return;
         }
 
-        // Create team
-        const newTeam = {
-            id: Date.now(),
-            name: formData.name,
-            description: formData.description,
-            members: [],
-            createdAt: new Date().toISOString(),
-            updatedAt: new Date().toISOString(),
-        };
-
-        // dispatch(createTeamRequest(newTeam));
         toast.success('Team created successfully!');
 
         // Reset form and close

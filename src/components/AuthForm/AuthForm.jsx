@@ -1,10 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./style.scss";
 function AuthForm({ titleImage, fields, buttonText, linkText, link }) {
-  const navigate = useNavigate();
-const handleClick = () => {
-  navigate("/dashboard"); 
-};
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate("/dashboard");
+    };
   return (
     <div className="LoginPage">
       <div className="form_cont">
@@ -18,10 +18,10 @@ const handleClick = () => {
               </div>
             ))}
           </div>
-          <button onClick={handleClick} type="submit" className="submit_button">
-            {buttonText}
-          </button>
-          <Link to={link}>{linkText}</Link>
+            <button onClick={handleClick} type="submit" className="submit_button">
+                {buttonText}
+            </button>
+            <Link to={link}>{linkText}</Link>
         </form>
       </div>
     </div>

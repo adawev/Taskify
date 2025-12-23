@@ -10,5 +10,10 @@ export default configureStore({
         tasks,
     },
     middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware().concat(api),
+        getDefaultMiddleware({
+            serializableCheck: {
+                ignoredActions: ['api/apiCall'],
+                ignoredActionPaths: ['payload.onSuccess', 'payload.onError'],
+            },
+        }).concat(api),
 });

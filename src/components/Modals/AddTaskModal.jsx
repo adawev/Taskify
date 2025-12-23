@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { toast } from 'sonner';
+import { createTask, getTasks } from '../../store/actions/taskActions';
 import './Modals.scss';
 
 const AddTaskModal = ({ show, onHide, teamId }) => {
     const dispatch = useDispatch();
-    const { currentTeam } = useSelector(state => state.teams);
 
     const [formData, setFormData] = useState({
         title: '',
         description: '',
         status: 'todo',
-        assignedTo: [],
     });
     const [validated, setValidated] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -24,7 +24,7 @@ const AddTaskModal = ({ show, onHide, teamId }) => {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const form = e.currentTarget;
 
@@ -34,30 +34,23 @@ const AddTaskModal = ({ show, onHide, teamId }) => {
             return;
         }
 
-        // Create task
-        const newTask = {
-            id: Date.now(),
-            teamId: teamId,
-            title: formData.title,
-            description: formData.description,
-            status: formData.status,
-            assignedTo: [],
-            createdAt: new Date().toISOString(),
-            updatedAt: new Date().toISOString(),
-        };
+        setLoading(true);
 
-        // dispatch(createTaskRequest(newTask));
-        toast.success('Task created successfully!');
+        dispatch(createTask(formData));
 
-        // Reset form and close
-        setFormData({
-            title: '',
-            description: '',
-            status: 'todo',
-            assignedTo: [],
-        });
-        setValidated(false);
-        onHide();
+        setTimeout(() => {
+            dispatch(getTasks());
+            toast.success('Task created successfully!');
+            setLoading(false);
+
+            setFormData({
+                title: '',
+                description: '',
+                status: 'todo',
+            });
+            setValidated(false);
+            onHide();
+        }, 500);
     };
 
     const handleClose = () => {
@@ -115,16 +108,16 @@ const AddTaskModal = ({ show, onHide, teamId }) => {
                         >
                             <option value="todo">To Do</option>
                             <option value="in_progress">In Progress</option>
-                            <option value="completed">Completed</option>
+                            <option value="done">Completed</option>
                         </Form.Select>
                     </Form.Group>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
+                    <Button variant="secondary" onClick={handleClose} disabled={loading}>
                         Cancel
                     </Button>
-                    <Button variant="primary" type="submit">
-                        Add Task
+                    <Button variant="primary" type="submit" disabled={loading}>
+                        {loading ? 'Creating...' : 'Add Task'}
                     </Button>
                 </Modal.Footer>
             </Form>

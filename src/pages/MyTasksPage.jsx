@@ -1,75 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Nav } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'sonner';
 import TaskCard from '../components/TaskCard/TaskCard';
 import AddTaskModal from '../components/Modals/AddTaskModal';
+import { getTasks, updateTaskStatusAction } from '../store/actions/taskActions';
 import './TeamPage.scss';
+
 const MyTasksPage = () => {
+    const dispatch = useDispatch();
+    const { list: tasks = [], loading } = useSelector(state => state.tasks);
     const [activeTab, setActiveTab] = useState('all');
     const [showAddTaskModal, setShowAddTaskModal] = useState(false);
     const [draggedTask, setDraggedTask] = useState(null);
 
-    // Mock tasks data - all tasks assigned to current user across all teams
-    const mockTasks = [
-        {
-            id: 1,
-            title: 'Design new landing page',
-            status: 'todo',
-            teamName: 'Design Team',
-            createdAt: '2025-12-02',
-        },
-        {
-            id: 2,
-            title: 'Fix authentication bug',
-            status: 'in_progress',
-            teamName: 'Backend Team',
-            createdAt: '2025-12-01',
-        },
-        {
-            id: 3,
-            title: 'Update documentation',
-            status: 'todo',
-            teamName: 'Documentation Team',
-            createdAt: '2025-12-01',
-        },
-        {
-            id: 4,
-            title: 'Implement payment gateway',
-            status: 'in_progress',
-            teamName: 'Backend Team',
-            createdAt: '2025-11-30',
-        },
-        {
-            id: 5,
-            title: 'Code review for PR #123',
-            status: 'completed',
-            teamName: 'Frontend Team',
-            createdAt: '2025-11-29',
-        },
-        {
-            id: 6,
-            title: 'Setup CI/CD pipeline',
-            status: 'completed',
-            teamName: 'DevOps Team',
-            createdAt: '2025-11-28',
-        },
-        {
-            id: 7,
-            title: 'Create API endpoints',
-            status: 'in_progress',
-            teamName: 'Backend Team',
-            createdAt: '2025-11-27',
-        },
-        {
-            id: 8,
-            title: 'Design mobile app screens',
-            status: 'todo',
-            teamName: 'Design Team',
-            createdAt: '2025-11-26',
-        },
-    ];
+    useEffect(() => {
+        dispatch(getTasks());
+    }, [dispatch]);
 
     const filterTasksByStatus = (status) => {
-        return mockTasks.filter(task => task.status === status);
+        if (!Array.isArray(tasks)) return [];
+        return tasks.filter(task => task.status === status);
     };
 
     const handleDragStart = (e, task) => {
@@ -85,7 +36,15 @@ const MyTasksPage = () => {
     const handleDrop = (e, newStatus) => {
         e.preventDefault();
         if (draggedTask && draggedTask.status !== newStatus) {
-            console.log(`Task "${draggedTask.title}" moved to ${newStatus}`);
+            dispatch(updateTaskStatusAction(draggedTask.id, newStatus));
+
+            setTimeout(() => {
+                dispatch(getTasks());
+            }, 300);
+
+            const statusLabel = newStatus === 'in_progress' ? 'In Progress' :
+                               newStatus === 'done' ? 'Completed' : 'To Do';
+            toast.success(`Task moved to ${statusLabel}`);
         }
         setDraggedTask(null);
     };
@@ -94,7 +53,7 @@ const MyTasksPage = () => {
         return {
             todo: filterTasksByStatus('todo').length,
             in_progress: filterTasksByStatus('in_progress').length,
-            completed: filterTasksByStatus('completed').length,
+            done: filterTasksByStatus('done').length,
         };
     };
 
@@ -121,7 +80,7 @@ const MyTasksPage = () => {
                             active={activeTab === 'all'}
                             onClick={() => setActiveTab('all')}
                         >
-                            All <span className="count">({mockTasks.length})</span>
+                            All <span className="count">({tasks.length})</span>
                         </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
@@ -142,10 +101,10 @@ const MyTasksPage = () => {
                     </Nav.Item>
                     <Nav.Item>
                         <Nav.Link
-                            active={activeTab === 'completed'}
-                            onClick={() => setActiveTab('completed')}
+                            active={activeTab === 'done'}
+                            onClick={() => setActiveTab('done')}
                         >
-                            Completed <span className="count">({counts.completed})</span>
+                            Completed <span className="count">({counts.done})</span>
                         </Nav.Link>
                     </Nav.Item>
                 </Nav>
@@ -200,15 +159,15 @@ const MyTasksPage = () => {
                     <div
                         className="kanban-column"
                         onDragOver={handleDragOver}
-                        onDrop={(e) => handleDrop(e, 'completed')}
+                        onDrop={(e) => handleDrop(e, 'done')}
                     >
                         <div className="column-header">
                             <h3 className="column-title">Completed</h3>
-                            <span className="task-count">{counts.completed}</span>
+                            <span className="task-count">{counts.done}</span>
                         </div>
                         <div className="tasks-container">
-                            {(activeTab === 'all' || activeTab === 'completed') &&
-                                filterTasksByStatus('completed')
+                            {(activeTab === 'all' || activeTab === 'done') &&
+                                filterTasksByStatus('done')
                                     .map(task => (
                                         <TaskCard
                                             key={task.id}

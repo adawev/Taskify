@@ -1,55 +1,51 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { Row, Col, Button, Card } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Button, Card } from 'react-bootstrap';
 import { toast } from 'sonner';
 import CreateTeamModal from '../components/Modals/CreateTeamModal';
 import './TeamsPage.scss';
 
 const TeamsPage = () => {
-    const dispatch = useDispatch();
-    const { list: teams, loading } = useSelector(state => state.teams);
-
     const [showCreateModal, setShowCreateModal] = useState(false);
-
-    useEffect(() => {
-    }, [dispatch]);
-
 
     const handleDeleteTeam = (teamId, e) => {
         e.stopPropagation();
-        // dispatch(deleteTeamRequest(teamId));
         toast.success('Team deleted successfully', {
             description: 'The team has been removed from your workspace.',
             duration: 3000,
         });
     };
 
+    const formatDate = (dateString) => {
+        if (!dateString) return '';
+        const date = new Date(dateString);
+        return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    };
 
     const mockTeams = [
         {
             id: 1,
-            name: 'Team Name 1',
-            description: 'Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry\'s standard dummy text ever since the 1500s.',
-            createdAt: '2025-12-01',
-            updatedAt: '2025-12-02',
+            name: 'Development Team',
+            description: 'Main development team working on core features and improvements.',
+            created_at: '2025-12-01',
+            updated_at: '2025-12-02',
         },
         {
             id: 2,
-            name: 'Team Name 2',
-            description: 'Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry\'s standard dummy text ever since the 1500s.',
-            createdAt: '2025-11-28',
-            updatedAt: '2025-12-01',
+            name: 'Design Team',
+            description: 'Creative team responsible for UI/UX design and branding.',
+            created_at: '2025-11-28',
+            updated_at: '2025-12-01',
         },
         {
             id: 3,
-            name: 'Team Name 3',
-            description: 'Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry\'s standard dummy text ever since the 1500s.',
-            createdAt: '2025-11-25',
-            updatedAt: '2025-11-30',
+            name: 'Marketing Team',
+            description: 'Marketing and outreach team handling promotions and user engagement.',
+            created_at: '2025-11-25',
+            updated_at: '2025-11-30',
         },
     ];
 
-    const displayTeams = teams.length > 0 ? teams : mockTeams;
+    const displayTeams = mockTeams;
 
     return (
         <div className="teams-page">
@@ -89,10 +85,10 @@ const TeamsPage = () => {
 
                                 <div className="team-dates">
                                     <span className="date-item">
-                                        <i className="bi bi-calendar-plus"></i> {team.createdAt}
+                                        <i className="bi bi-calendar-plus"></i> {formatDate(team.created_at || team.createdAt)}
                                     </span>
                                     <span className="date-item">
-                                        <i className="bi bi-calendar-check"></i> {team.updatedAt}
+                                        <i className="bi bi-calendar-check"></i> {formatDate(team.updated_at || team.updatedAt)}
                                     </span>
                                 </div>
                             </Card.Body>
