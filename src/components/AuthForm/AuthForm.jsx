@@ -1,6 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./style.scss";
-function AuthForm({ titleImage, fields, buttonText, linkText, link, pageLink }) {
+function AuthForm({ titleImage, fields, buttonText, linkText, link }) {
+  const navigate = useNavigate();
+const handleClick = () => {
+  navigate("/dashboard"); 
+};
   return (
     <div className="LoginPage">
       <div className="form_cont">
@@ -14,7 +18,7 @@ function AuthForm({ titleImage, fields, buttonText, linkText, link, pageLink }) 
               </div>
             ))}
           </div>
-          <button to={pageLink} type="submit" className="submit_button">
+          <button onClick={handleClick} type="submit" className="submit_button">
             {buttonText}
           </button>
           <Link to={link}>{linkText}</Link>
