@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { Dropdown } from 'react-bootstrap';
 import logo from '../../images/taskify_logo.png';
@@ -6,8 +6,9 @@ import './Sidebar.scss';
 
 const Sidebar = () => {
     const navigate = useNavigate();
-
-    // Mock user data
+    const handleClick = () => {
+  navigate("/"); 
+};
     const currentUser = {
         name: 'Pirmamatov Sh',
         avatar: null,
@@ -16,7 +17,7 @@ const Sidebar = () => {
     return (
         <div className="sidebar">
             <div className="sidebar-header">
-                <img src={logo} alt="Taskify" className="sidebar-logo" />
+                <img src={logo} alt="Taskify" className="sidebar-logo" onClick={handleClick}/>
             </div>
 
             <nav className="sidebar-nav">
