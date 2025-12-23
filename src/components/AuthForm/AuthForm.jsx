@@ -14,9 +14,9 @@ function AuthForm({ titleImage, fields, buttonText, linkText, link, pageLink }) 
               </div>
             ))}
           </div>
-          <Link to={pageLink} type="submit" className="submit_button">
+          <button to={pageLink} type="submit" className="submit_button">
             {buttonText}
-          </Link>
+          </button>
           <Link to={link}>{linkText}</Link>
         </form>
       </div>
