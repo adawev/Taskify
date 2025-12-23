@@ -10,6 +10,7 @@ function LoginPage() {
       buttonText="LOG IN"
       linkText="Don't have an account?"
       link="/register"
+      pageLink='/dashboard'
       fields={[
         {
           type: "email",

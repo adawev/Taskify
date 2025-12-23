@@ -11,6 +11,7 @@ function RegisterPage() {
       buttonText="REGISTER"
       linkText="Already have an account?"
       link="/login"
+      pageLink='/dashboard'
       fields={[
          {
           type: "text",
