@@ -4,7 +4,7 @@
     display: grid;
     place-items: center;
     .form_cont {
-        height: 650px;
+        height: fit-content;
         width: 500px;
         display: flex;
         flex-direction: column;
@@ -100,4 +100,85 @@
 
 }
 
+/* =======================
+   TABLET (до 768px)
+======================= */
+@media (max-width: 768px) {
+  .LoginPage {
+    padding: 20px;
 
+    .form_cont {
+      width: 90%;
+      padding: 30px;
+    }
+
+    .profile_picture {
+      width: 100px;
+      height: 100px;
+    }
+
+    form {
+      input {
+        font-size: 20px;
+      }
+
+      .position_label {
+        margin: 35px auto;
+      }
+    }
+
+    .submit_button {
+      font-size: 22px;
+      padding: 16px 0;
+      margin-top: 60px;
+    }
+  }
+}
+
+/* =======================
+   MOBILE (до 480px)
+======================= */
+@media (max-width: 480px) {
+  .LoginPage {
+    padding: 15px;
+
+    .form_cont {
+      width: 100%;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .profile_picture {
+      width: 80px;
+      height: 80px;
+    }
+
+    form {
+      input {
+        font-size: 18px;
+        padding-left: 45px;
+      }
+
+      .position_picture {
+        width: 18px;
+        height: 18px;
+        bottom: 8px;
+      }
+
+      .position_label {
+        margin: 25px auto;
+      }
+    }
+
+    .submit_button {
+      font-size: 20px;
+      padding: 14px 0;
+      margin-top: 40px;
+      border-radius: 12px;
+    }
+
+    a {
+      font-size: 14px;
+    }
+  }
+}

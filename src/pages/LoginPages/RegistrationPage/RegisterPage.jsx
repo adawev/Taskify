@@ -1,16 +1,24 @@
 import profile_picture from "../../../images/registration_picture.png";
+import username from "../../../images/username.png";
 import mail from "../../../images/inputMail.png";
 import lock from "../../../images/inputLock.png";
 import AuthForm from "../../../components/AuthForm/AuthForm";
 
-function LoginPage() {
+function RegisterPage() {
   return (
     <AuthForm
       titleImage={profile_picture}
-      buttonText="LOG IN"
-      linkText="Don't have an account?"
-      link="/register"
+      buttonText="REGISTER"
+      linkText="Already have an account?"
+      link="/login"
       fields={[
+         {
+          type: "text",
+          placeholder: "Name",
+          icon: username,
+          className: "Password"
+        },
+ 
         {
           type: "email",
           placeholder: "Email ID",
@@ -22,10 +30,16 @@ function LoginPage() {
           placeholder: "Password",
           icon: lock,
           className: "Password"
-        }
+        },
+        {
+          type: "password",
+          placeholder: "Confirm password",
+          icon: lock,
+          className: "Password"
+        },
       ]}
     />
   );
 }
 
-export default LoginPage;
+export default RegisterPage;
